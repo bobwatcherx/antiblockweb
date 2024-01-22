@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suka Jepang</title>
+    <!-- Link ke Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100vh; /* 100% dari tinggi viewport */
+            border: 0; /* Menghilangkan border iframe */
+        }
+
+        .scrollable-buttons {
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        #loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 5px;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+<div class=" shadow p-2" style="background-color: #ad096e">
+    <div>
+        <a class="container" href="index.html" style="color:white;font-weight: bold;font-size: 15px">Suka Jepang</a>
+        <a href="request.html" class="btn btn-primary">Request Bokep</a>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+        <p style="font-weight: bold">Pilih Server Bokep</p>
+    </div>
+    <div class="container mt-2 mb-1 shadow scrollable-buttons">
+        <div class="d-flex flex-row flex-nowrap">
+            <button class="btn btn-primary mr-2" onClick="watch('https://javdoe.sh#content')">Jav 1</button>
+            <button class="btn btn-primary mr-2" onClick="watch('https://javhat.tv#content')">Jav 2</button>
+            <button class="btn btn-primary mr-2" onClick="watch('https://javseen.tv#content')">Jav 3</button>
+            <button class="btn btn-danger mr-2" onClick="watch('https://javsubindo.me/')">Jav INDO 1</button>
+            <button class="btn btn-danger mr-2" onClick="watch('https://myhdjav.me')">Jav INDO 2</button>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4" id="loading">Loading...</div>
+<iframe id="myframeid" frameborder="0"></iframe>
+
+<!-- Link ke Bootstrap JS dan Popper.js (diperlukan untuk beberapa komponen Bootstrap) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+    let myframeid = document.getElementById("myframeid");
+    let loading = document.getElementById("loading");
+    let base_url = "https://nodeunblock-chi.vercel.app/proxy/";
+
+    myframeid.src = "https://nodeunblock-chi.vercel.app/proxy/https:/javdoe.sh#content";
+
+    function watch(url) {
+        loading.style.display = "block"; // Tampilkan elemen loading
+        // Set src iframe dengan base_url + parameter URL
+        myframeid.src = base_url + url;
+    }
+
+    // Tambahkan event listener untuk peristiwa loading iframe
+    myframeid.addEventListener("loadstart", function () {
+        loading.style.display = "block"; // Tampilkan elemen loading saat proses memuat dimulai
+    });
+
+    // Tambahkan event listener untuk peristiwa selesai memuat iframe
+    myframeid.addEventListener("load", function () {
+        loading.style.display = "none"; // Sembunyikan elemen loading saat proses memuat selesai
+    });
+</script>
+</body>
+</html>
