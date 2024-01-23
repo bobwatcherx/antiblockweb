@@ -3,91 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suka Jepang</title>
-    <!-- Link ke Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <title>Buka web terblokir</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
+        .linkurl {
+            text-decoration: none
         }
 
-        iframe {
-            width: 100%;
-            height: 100vh; /* 100% dari tinggi viewport */
-            border: 0; /* Menghilangkan border iframe */
+        .row .col-6 {
+            margin: 0px;
+            padding: 0px;
         }
 
-        .scrollable-buttons {
-            overflow-x: auto;
-            white-space: nowrap;
+        .titlecard {
+            font-weight: bold
         }
 
-        #loading {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 20px;
-            border-radius: 5px;
-            z-index: 999;
+        .btn-link {
+            font-size: 15px
         }
+
+        .inputborder {
+            border: 2px solid black;
+        }
+       .redtext {
+            color: red;
+            font-weight: bold;
+            text-decoration: line-through;
+        }
+
     </style>
 </head>
-<body>
+<body class="container">
 
-<div class=" shadow p-2" style="background-color: #ad096e">
-    <div>
-        <a class="container" href="index.html" style="color:white;font-weight: bold;font-size: 15px">Suka Jepang</a>
-        <a href="request.html" class="btn btn-primary">Request Bokep</a>
-    </div>
-</div>
-
-<div>
     <div class="container">
-        <p style="font-weight: bold">Pilih Server Bokep</p>
+        <h1 class="mt-5 text-center">Buka Web yg Terblokir KOMINFO 
+            <br>( Anti <span class="redtext">internet positif</span>)
+        </h1>
     </div>
-    <div class="container mt-2 mb-1 shadow scrollable-buttons">
-        <div class="d-flex flex-row flex-nowrap">
-            <button class="btn btn-primary mr-2" onClick="watch('https://javdoe.sh#content')">Jav 1</button>
-            <button class="btn btn-primary mr-2" onClick="watch('https://javhat.tv#content')">Jav 2</button>
-            <button class="btn btn-primary mr-2" onClick="watch('https://javseen.tv#content')">Jav 3</button>
-            <button class="btn btn-danger mr-2" onClick="watch('https://javsubindo.me/')">Jav INDO 1</button>
-            <button class="btn btn-danger mr-2" onClick="watch('https://myhdjav.me')">Jav INDO 2</button>
+    
+    <div class="card shadow p-2">
+        <div class="mb-3 mt-3">
+            <label for="inputid" class="form-label" style="font-weight: bold">Ketik Alamat Web terblokir Disini</label>
+            <input type="text" 
+                id="inputid"
+                placeholder="Ketikkan alamat Web terblokir disini" 
+                class="form-control inputborder" width="100%">
+        </div>
+
+        <div style="display: flex; justify-content: end">
+            <button class="btn btn-primary linkurl" onclick="gopage()">Buka Web</button>
         </div>
     </div>
-</div>
 
-<div class="mt-4" id="loading">Loading...</div>
-<iframe id="myframeid" frameborder="0"></iframe>
+    <div class="row mt-2">
+        <h5>Situs Bokep Populer</h5>
+        <div class="col-6 col-md-12 col-lg-12 col-sm-6">
+            <div class="card shadow">
+                <ul>
+                    <p class="titlecard">Bokep jepang</p>
+                    <li>
+                        <button class="btn btn-link" onclick="checkUrl('https://javdoe.sh')">https://javdoe.sh</button>
+                    </li>
+                    <li>
+                        <button class="btn btn-link" onclick="checkUrl('https://javhat.tv')">https://javhat.tv</button>
+                    </li>
+                    <li>
+                        <button class="btn btn-link" onclick="checkUrl('https://jav.guru')">https://jav.guru</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-6 col-md-12 col-lg-12 col-sm-6">
+            <div class="card shadow">
+                <p class="titlecard">JAV SUB INDO</p>
+                <button class="btn btn-link" onclick="checkUrl('https://javhd.com/id/')">https://javhd.com/id/</button>
+                <button class="btn btn-link" onclick="checkUrl('https://indojavsub.xyz/')">https://indojavsub.xyz/</button>
+                <button class="btn btn-link" onclick="checkUrl('https://javsubindo.com/')">https://javsubindo.com/</button>
+            </div>
+        </div>
+    </div>  
 
-<!-- Link ke Bootstrap JS dan Popper.js (diperlukan untuk beberapa komponen Bootstrap) -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script>
-    let myframeid = document.getElementById("myframeid");
-    let loading = document.getElementById("loading");
-    let base_url = "https://nodeunblock-chi.vercel.app/proxy/";
+    <div class="container mt-2">
+        <h5>Klik Link Tautan Cepat</h5>
+    </div>
+    <div class="row mt-2">
+        <div class="col-6 col-md-3 col-lg-3 col-sm-6">
+            <div class="card" onclick="checkUrl('https://xvideos.com')">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.1min30.com%2Fwp-content%2Fuploads%2F2019%2F01%2Flogo-XVid%25C3%25A9os.jpg" 
+                    style="width: 100%" 
+                    alt="">
+            </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-3 col-sm-6">
+            <div class="card" onclick="checkUrl('https://xhamster.com/')">
+                <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ftous-logos.com%2Fwp-content%2Fuploads%2F2018%2F12%2FxHamster.jpg" 
+                    style="width: 100%" 
+                    alt="">
+            </div>
+        </div>
+    </div>  
 
-    myframeid.src = "//nodeunblock-chi.vercel.app/proxy/https:/javdoe.sh#content";
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    function watch(url) {
-        loading.style.display = "block"; // Tampilkan elemen loading
-        // Set src iframe dengan base_url + parameter URL
-        myframeid.src = base_url + url;
-    }
+    <script>
+        var base_url = "https://nodeunblock-chi.vercel.app/proxy/";
 
-    // Tambahkan event listener untuk peristiwa loading iframe
-    myframeid.addEventListener("loadstart", function () {
-        loading.style.display = "block"; // Tampilkan elemen loading saat proses memuat dimulai
-    });
+        function gopage() {
+            var inputid = document.getElementById('inputid').value;
+            if (inputid === "") {
+                alert("Isi dulu alamat web");
+            } else {
+                window.open(base_url + inputid, '_blank');
+            }
+        }
 
-    // Tambahkan event listener untuk peristiwa selesai memuat iframe
-    myframeid.addEventListener("load", function () {
-        loading.style.display = "none"; // Sembunyikan elemen loading saat proses memuat selesai
-    });
-</script>
+        function checkUrl(url) {
+            window.open(base_url + url, '_blank');
+        }
+    </script>
 </body>
 </html>
